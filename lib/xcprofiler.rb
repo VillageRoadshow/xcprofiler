@@ -18,7 +18,7 @@ module Xcprofiler
       options.reporters = [:standard_output]
 
       parser = OptionParser.new do |opts|
-        opts.banner = "Usage: xcprofiler [product name or .xcactivitylog file] [options]".red
+        opts.banner = "Usage: xcprofiler [product name or .xcactivitylog file] [options]"
 
         opts.on("--[no-]show-invalids", "Show invalid location results") { |v| options.show_invalid_locations = v }
         opts.on("-o [ORDER]", [:default, :time, :file], "Sort order") { |v| options.order = v }
@@ -69,7 +69,7 @@ module Xcprofiler
         profiler.reporters = reporters
         profiler.report!
       rescue Exception => e
-        puts e.message.red
+        puts e.message
       end
     end
   end
